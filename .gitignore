@@ -36,10 +36,6 @@ Icon?
 Thumbs.db
 *.out
 
-### project specific ###
-**/db-test/
-**/db/
-
 ### Java ###
 *.class
 
@@ -84,3 +80,5 @@ jspm_packages/
 
 # Lerna
 lerna-debug.log
+
+#

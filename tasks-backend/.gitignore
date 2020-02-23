@@ -17,3 +17,9 @@
 *.iml
 *.ipr
 /out/
+
+# Other
+!/db-test/
+!/db/
+
+#
