@@ -1,0 +1,5 @@
+db:
+  path: db/
+tasks:
+  clientApp:
+    name: Tasks

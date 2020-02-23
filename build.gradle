@@ -1,0 +1,9 @@
+plugins {
+    id "org.sonarqube" version "2.7"
+    id 'idea'
+}
+allprojects {
+    group 'com.example'
+    version '0.0.1-SNAPSHOT'
+    description = 'Tasks'
+}
