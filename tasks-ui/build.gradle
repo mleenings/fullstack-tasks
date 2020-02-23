@@ -1,0 +1,33 @@
+plugins {
+  id 'java'
+  id "com.moowork.node" version "1.2.0"
+}
+
+node {
+  version = '10.19.0'
+  npmVersion = '6.13.7'
+  download = true
+}
+
+jar.dependsOn 'npm_run_build'
+
+// needs webpack cli: npm install webpack webpack-cli --save-dev
+task webpack(type: Exec) {
+  commandLine "npm run webpack:build"
+}
+
+jar {
+  from 'dist/ tasks-ui ' into ' static '
+}
+
+// Workaround for:
+// Could not find org.nodejs:node:10.19.0.
+// Searched in the following locations:
+// - https://nodejs.org/dist/v10.19.0/ivy.xml
+repositories.whenObjectAdded {
+  if (it instanceof IvyArtifactRepository) {
+    metadataSources {
+      artifact()
+    }
+  }
+}
