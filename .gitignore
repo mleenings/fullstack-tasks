@@ -38,7 +38,7 @@ Thumbs.db
 
 ### project specific ###
 db/*
-tasks-backend/db-test/*
+tasks-backend/db*
 
 ### Java ###
 *.class
