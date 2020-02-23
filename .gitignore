@@ -28,9 +28,10 @@
 ### Others ###
 /out/
 *.hprof
-!/tasks-backend/db-test/
-!/tasks-backend/db/
-!/db/
+**/tasks-backend/db-test/**
+**/tasks-backend/db/**
+**/generated/
+**/db/**
 
 ### System Files ###
 .DS_Store*
