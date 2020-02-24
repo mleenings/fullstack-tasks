@@ -38,7 +38,7 @@ sh 01-build.sh
 ```
 or
 ```bash
-sh ./gradlew build
+./gradlew clean build --refresh-dependencies
 ```
 2 - Start the Application (Spring Boot + Angular UI):
 ```bash
