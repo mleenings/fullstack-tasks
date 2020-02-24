@@ -25,6 +25,7 @@ Gradle (6.1.1)
 ```bash
 sudo apt install gradle
 ```
+(or use _./gradlew_ instead of _gradle_)
 
 ## Impressions
 Desktop Version                                 |  Mobile Version
