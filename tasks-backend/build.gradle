@@ -30,18 +30,16 @@ dependencies {
     implementation 'org.springframework.security:spring-security-test:4.0.0.RELEASE'
     implementation 'org.springframework.data:spring-data-commons'
     implementation 'org.springframework:spring-tx'
-    testImplementation 'org.apache.httpcomponents:httpclient'
+    compile 'org.springframework.boot:spring-boot-devtools'
     compile group: 'org.springframework', name: 'spring-core', version: '5.2.3.RELEASE'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    // Apache
+    compile 'org.apache.commons:commons-lang3:3.0'
+    testImplementation 'org.apache.httpcomponents:httpclient'
     // JsonDB
     compile 'io.jsondb:jsondb-core:1.0.106'
-    // Lombok
-    compileOnly 'org.projectlombok:lombok:1.18.12'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
-    testCompileOnly 'org.projectlombok:lombok:1.18.12'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
     // Others
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
     // Google

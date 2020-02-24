@@ -5,10 +5,11 @@ import com.google.gson.Gson;
 import io.jsondb.annotation.Document;
 import io.jsondb.annotation.Id;
 import io.jsondb.annotation.Secret;
-import lombok.EqualsAndHashCode;
+
+import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
+import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 
 @Document(collection = "tasks", schemaVersion = "1.0")
-@EqualsAndHashCode(callSuper = false)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TaskModel {
 
@@ -56,5 +57,15 @@ public class TaskModel {
     @Override
     public String toString() {
         return new Gson().toJson(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return reflectionEquals(this, o);
+    }
+
+    @Override
+    public int hashCode() {
+        return reflectionHashCode(this);
     }
 }

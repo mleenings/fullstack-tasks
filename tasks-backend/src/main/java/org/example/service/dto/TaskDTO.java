@@ -1,12 +1,11 @@
 package org.example.service.dto;
 
 import com.google.gson.Gson;
-import lombok.EqualsAndHashCode;
 import org.example.domain.model.TaskModel;
 
-// Info: Lombok not working perfectly with the reflection of Spring,
-// so we need to create real getter and setter and no @Data-Annotation
-@EqualsAndHashCode
+import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
+import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
+
 public class TaskDTO {
 
     private String id;
@@ -52,5 +51,15 @@ public class TaskDTO {
     @Override
     public String toString() {
         return new Gson().toJson(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return reflectionEquals(this, o);
+    }
+
+    @Override
+    public int hashCode() {
+        return reflectionHashCode(this);
     }
 }
