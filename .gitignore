@@ -28,8 +28,8 @@
 ### Others ###
 /out/
 *.hprof
-**/tasks-backend/db-test/**
-**/tasks-backend/db/**
+**/tasks-common/db-test/**
+**/tasks-common/db/**
 **/generated/
 **/db/**
 

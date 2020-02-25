@@ -1,2 +1,2 @@
 #!/bin/bash
-(cd tasks-backend && gradle bootRun)
+(cd tasks-web && gradle bootRun)

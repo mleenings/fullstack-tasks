@@ -1,4 +1,3 @@
 rootProject.name = 'tasks'
 
-include 'tasks-backend', 'tasks-ui'
-
+include 'tasks-common', 'tasks-web', 'tasks-ui'

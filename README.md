@@ -47,7 +47,7 @@ sh 02-start.sh
 ```
 or
 ```bash
-cd tasks-backend && ./gradlew bootRun
+./gradlew bootRun
 cd tasks-ui && ng serve
 ```
 3 - Now you can open the Application

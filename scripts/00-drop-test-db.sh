@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf tasks-backend/db-test/
+rm -rf tasks-common/db-test/

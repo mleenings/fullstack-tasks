@@ -1,2 +1,3 @@
 #!/bin/bash
-(cd tasks-backend && gradle clean build)
+(cd tasks-common && gradle clean build)
+(cd tasks-web && gradle clean build)
