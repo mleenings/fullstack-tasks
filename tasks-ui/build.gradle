@@ -20,7 +20,7 @@ jar {
   from 'dist/ tasks-ui ' into ' static '
 }
 
-// Workaround for:
+// Workaround for following error:
 // Could not find org.nodejs:node:10.19.0.
 // Searched in the following locations:
 // - https://nodejs.org/dist/v10.19.0/ivy.xml

@@ -22,6 +22,20 @@ repositories {
     maven { url "https://dl.bintray.com/mockito/maven" }
 }
 
+ext {
+    springSecurityTestVersion = '4.0.0.RELEASE'
+    springCoreVersion = '5.2.3.RELEASE'
+    apacheCommonsLangVersion = '3.0'
+    jaxbApiVersion = '2.3.0'
+    guavaVersion = '23.5-jre'
+    gsonVersion = '2.8.6'
+    jupiterVersion = '5.3.1'
+    junitVintageEngineVersion = '5.1.0'
+    mockitoVersion = '2.23.4'
+    junitPlatformRunnerVersion = '1.2.0'
+    assertjVersion = '3.9.1'
+}
+
 dependencies {
     // project dependencies
     implementation project(':tasks-common')
@@ -29,38 +43,36 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.security:spring-security-test:4.0.0.RELEASE'
+    implementation "org.springframework.security:spring-security-test:${springSecurityTestVersion}"
     implementation 'org.springframework.data:spring-data-commons'
     implementation 'org.springframework:spring-tx'
     compile 'org.springframework.boot:spring-boot-devtools'
-    compile group: 'org.springframework', name: 'spring-core', version: '5.2.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: "${springCoreVersion}"
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     // Apache
-    compile 'org.apache.commons:commons-lang3:3.0'
+    compile "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
     testImplementation 'org.apache.httpcomponents:httpclient'
-    // JsonDB
-    compile 'io.jsondb:jsondb-core:1.0.106'
     // Others
-    implementation 'javax.xml.bind:jaxb-api:2.3.0'
+    implementation "javax.xml.bind:jaxb-api:${jaxbApiVersion}"
     // Google
-    implementation 'com.google.guava:guava:23.5-jre'
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "com.google.guava:guava:${guavaVersion}"
+    implementation "com.google.code.gson:gson:${gsonVersion}"
     // Tests
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-    testCompile 'org.junit.vintage:junit-vintage-engine:5.1.0'
-    testCompile 'org.junit.jupiter:junit-jupiter-params:5.2.0'
-    testCompile 'org.mockito:mockito-junit-jupiter:2.19.0'
-    testImplementation 'org.mockito:mockito-core:2.23.4'
-    testCompile 'org.junit.platform:junit-platform-runner:1.2.0'
-    testCompile 'org.assertj:assertj-core:3.9.1'
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jupiterVersion}"
+    testCompile "org.junit.vintage:junit-vintage-engine:${junitVintageEngineVersion}"
+    testCompile "org.junit.jupiter:junit-jupiter-params:${jupiterVersion}"
+    testCompile "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
+    testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+    testCompile "org.junit.platform:junit-platform-runner:${junitPlatformRunnerVersion}"
+    testCompile "org.assertj:assertj-core:${assertjVersion}"
 }
 
 test {
     useJUnitPlatform()
 }
 
-delete 'db-test'
+delete 'db-test/'
