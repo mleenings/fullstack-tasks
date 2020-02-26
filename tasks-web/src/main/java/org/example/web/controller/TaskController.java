@@ -17,6 +17,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
@@ -58,15 +59,20 @@ public class TaskController {
     public ResponseEntity<TaskDTO> ceateTask(@Valid @RequestBody TaskDTO taskDTO)
             throws URISyntaxException {
         LOGGER.debug("REST request POST : /api/tasks/{}", taskDTO);
-        if (taskDTO.getId() != null) {
-            return ResponseEntity.badRequest().build();
-        } else {
-            TaskDTO newTask = taskMapper.toDTO(taskService.createTask(taskMapper.toModel(taskDTO)));
-            return ResponseEntity.created(new URI("/api/tasks/" + newTask.getId()))
-                    .headers(
-                            HeaderUtil.createAlert(
-                                    applicationName, "userManagement.created", String.valueOf(newTask.getId())))
-                    .body(newTask);
+        try {
+            if (taskDTO.getId() != null) {
+                return ResponseEntity.badRequest().build();
+            } else {
+                TaskDTO newTask = taskMapper.toDTO(taskService.createTask(taskMapper.toModel(taskDTO)));
+                return ResponseEntity.created(new URI("/api/tasks/" + newTask.getId()))
+                        .headers(
+                                HeaderUtil.createAlert(
+                                        applicationName, "userManagement.created", String.valueOf(newTask.getId())))
+                        .body(newTask);
+            }
+        } catch (Throwable t) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Could not created", t);
         }
     }
 
@@ -91,11 +97,17 @@ public class TaskController {
     @GetMapping("/tasks/")
     public ResponseEntity<List<TaskDTO>> getAllTasks(Pageable pageable) {
         LOGGER.debug("REST request GET: /api/tasks/");
-        final Page<TaskDTO> page = convert(taskService.findAllTasks(), pageable);
-        HttpHeaders headers =
-                PaginationUtil.generatePaginationHttpHeaders(
-                        ServletUriComponentsBuilder.fromCurrentRequest(), page);
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        try {
+            final Page<TaskDTO> page = convert(taskService.findAllTasks(), pageable);
+            HttpHeaders headers =
+                    PaginationUtil.generatePaginationHttpHeaders(
+                            ServletUriComponentsBuilder.fromCurrentRequest(), page);
+            return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+        } catch (Throwable t) {
+            LOGGER.error(t.getMessage(), t);
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Could not find all tasks", t);
+        }
     }
 
     /**
@@ -108,16 +120,22 @@ public class TaskController {
     @GetMapping("/tasks/{id}")
     public ResponseEntity<TaskDTO> getTask(@PathVariable String id) throws URISyntaxException {
         LOGGER.debug("REST request GET: /api/tasks/{}", id);
-        Optional<TaskModel> taskModel = taskService.getTask(id);
-        if (taskModel.isPresent()) {
-            TaskDTO dto = taskMapper.toDTO(taskModel.get());
-            return ResponseEntity.created(new URI("/api/tasks/" + dto.getId()))
-                    .headers(
-                            HeaderUtil.createAlert(
-                                    applicationName, "userManagement.created", String.valueOf(dto.getId())))
-                    .body(dto);
-        } else {
-            return (ResponseEntity<TaskDTO>) ResponseEntity.notFound();
+        try {
+            Optional<TaskModel> taskModel = taskService.getTask(id);
+            if (taskModel.isPresent()) {
+                TaskDTO dto = taskMapper.toDTO(taskModel.get());
+                return ResponseEntity.created(new URI("/api/tasks/" + dto.getId()))
+                        .headers(
+                                HeaderUtil.createAlert(
+                                        applicationName, "userManagement.created", String.valueOf(dto.getId())))
+                        .body(dto);
+            } else {
+                return (ResponseEntity<TaskDTO>) ResponseEntity.notFound();
+            }
+        } catch (Throwable t) {
+            LOGGER.error(t.getMessage(), t);
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Task Not Found", t);
         }
     }
 
@@ -130,8 +148,14 @@ public class TaskController {
     @DeleteMapping("/tasks/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable String id) {
         LOGGER.debug("REST request Delete: /api/tasks/{}", id);
-        taskService.deleteTask(id);
-        return ResponseEntity.ok().build();
+        try {
+            taskService.deleteTask(id);
+            return ResponseEntity.ok().build();
+        } catch (Throwable t) {
+            LOGGER.error(t.getMessage(), t);
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Could not delete", t);
+        }
     }
 
     /**
