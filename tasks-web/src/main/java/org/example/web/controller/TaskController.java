@@ -1,5 +1,7 @@
 package org.example.web.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.example.domain.model.TaskModel;
 import org.example.service.TaskService;
 import org.example.web.formdata.TaskDTO;
@@ -27,8 +29,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Controller for Task.
+ * <p>
+ * Swagger Api Documentation:
+ *
+ * @see <a href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a>
+ */
 @RestController
 @RequestMapping(value = "/api")
+@Api("Tasks Swagger API Documentation")
 public class TaskController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TaskController.class);
 
@@ -56,6 +66,7 @@ public class TaskController {
      * @throws URISyntaxException uriException if the Location URI syntax is incorrect.
      */
     @PostMapping("/tasks/")
+    @ApiOperation("Creates a new task")
     public ResponseEntity<TaskDTO> ceateTask(@Valid @RequestBody TaskDTO taskDTO)
             throws URISyntaxException {
         LOGGER.debug("REST request POST : /api/tasks/{}", taskDTO);
@@ -83,6 +94,7 @@ public class TaskController {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated task.
      */
     @PutMapping("/tasks/")
+    @ApiOperation("Updates an existing task")
     public ResponseEntity<TaskDTO> updateTask(@Valid @RequestBody TaskDTO taskDTO) {
         LOGGER.debug("REST request PUT /tasks/{}", taskDTO);
         taskService.updateTask(taskMapper.toModel(taskDTO));
@@ -95,6 +107,7 @@ public class TaskController {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body all tasks.
      */
     @GetMapping("/tasks/")
+    @ApiOperation("Returns all existing tasks")
     public ResponseEntity<List<TaskDTO>> getAllTasks(Pageable pageable) {
         LOGGER.debug("REST request GET: /api/tasks/");
         try {
@@ -118,6 +131,7 @@ public class TaskController {
      * id, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/tasks/{id}")
+    @ApiOperation("Returns a specific task")
     public ResponseEntity<TaskDTO> getTask(@PathVariable String id) throws URISyntaxException {
         LOGGER.debug("REST request GET: /api/tasks/{}", id);
         try {
@@ -146,6 +160,7 @@ public class TaskController {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/tasks/{id}")
+    @ApiOperation("Deletes a specific task")
     public ResponseEntity<Void> deleteTask(@PathVariable String id) {
         LOGGER.debug("REST request Delete: /api/tasks/{}", id);
         try {

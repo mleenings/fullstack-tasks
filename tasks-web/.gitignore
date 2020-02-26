@@ -1,7 +1,8 @@
 # Gradle
 .gradle
 .m2
-/build/
+build/*
+!build/build.xml
 !gradle-wrapper.jar
 .gradletasknamecache
 
@@ -28,10 +29,10 @@
 ### Others ###
 /out/
 *.hprof
-**/tasks-common/db-test/**
-**/tasks-common/db/**
+**/tasks-web/db-test/**
 **/generated/
 **/db/**
+**/db-test/**
 
 ### System Files ###
 .DS_Store*

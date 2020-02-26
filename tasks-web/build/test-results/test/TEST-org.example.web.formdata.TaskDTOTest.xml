@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.web.formdata.TaskDTOTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-25T20:35:00" hostname="DESKTOP-8IAO327" time="0.0">
-  <properties/>
-  <testcase name="dtoTest()" classname="org.example.web.formdata.TaskDTOTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

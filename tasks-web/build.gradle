@@ -34,6 +34,8 @@ ext {
     mockitoVersion = '2.23.4'
     junitPlatformRunnerVersion = '1.2.0'
     assertjVersion = '3.9.1'
+    swagger2Version = '2.9.2'
+    swaggerUiVersion = '2.0.2'
 }
 
 dependencies {
@@ -69,6 +71,9 @@ dependencies {
     testImplementation "org.mockito:mockito-core:${mockitoVersion}"
     testCompile "org.junit.platform:junit-platform-runner:${junitPlatformRunnerVersion}"
     testCompile "org.assertj:assertj-core:${assertjVersion}"
+    // Swagger
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: "${swagger2Version}"
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: "${swaggerUiVersion}"
 }
 
 test {
