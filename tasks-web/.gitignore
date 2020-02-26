@@ -32,6 +32,7 @@ build/*
 **/generated/
 **/db/**
 !/db-test/
+**/db-test/**
 
 ### System Files ###
 .DS_Store*
