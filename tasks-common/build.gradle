@@ -14,7 +14,7 @@ ext {
     springDataCommonsVersion = '2.2.4.RELEASE'
     springTransactionVersion = '5.2.3.RELEASE'
     apacheCommonsLangVersion = '3.0'
-    apacheHttpClientVersion = '4.5.11'
+    apacheHttpClientVersion = '4.5.12'
     springCoreVersion = '5.2.3.RELEASE'
     javaxAnnotationApiVersion = '1.3.2'
     jsonDBVersion = '1.0.106'
