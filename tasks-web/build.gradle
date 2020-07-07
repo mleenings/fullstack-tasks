@@ -23,7 +23,7 @@ repositories {
 }
 
 ext {
-    springSecurityTestVersion = '4.0.0.RELEASE'
+    springSecurityTestVersion = '5.3.3.RELEASE'
     springCoreVersion = '5.2.3.RELEASE'
     apacheCommonsLangVersion = '3.0'
     jaxbApiVersion = '2.3.0'
