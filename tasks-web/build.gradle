@@ -30,7 +30,7 @@ ext {
     guavaVersion = '23.5-jre'
     gsonVersion = '2.8.6'
     jupiterVersion = '5.3.1'
-    junitVintageEngineVersion = '5.1.0'
+    junitVintageEngineVersion = '5.6.2'
     mockitoVersion = '2.23.4'
     junitPlatformRunnerVersion = '1.2.0'
     assertjVersion = '3.9.1'
