@@ -34,7 +34,7 @@ ext {
     mockitoVersion = '2.23.4'
     junitPlatformRunnerVersion = '1.2.0'
     assertjVersion = '3.9.1'
-    swagger2Version = '2.9.2'
+    swagger2Version = '2.10.5'
     swaggerUiVersion = '2.0.2'
 }
 
