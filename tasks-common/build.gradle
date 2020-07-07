@@ -24,7 +24,7 @@ ext {
     jupiterVersion = '5.3.1'
     junitVintageEngineVersion = '5.1.0'
     mockitoVersion = '2.23.4'
-    junitPlatformRunnerVersion = '1.2.0'
+    junitPlatformRunnerVersion = '1.6.2'
     assertjVersion = '3.9.1'
 }
 
