@@ -23,7 +23,7 @@ ext {
     gsonVersion = '2.8.6'
     jupiterVersion = '5.3.1'
     junitVintageEngineVersion = '5.6.2'
-    mockitoVersion = '2.23.4'
+    mockitoVersion = '3.3.12'
     junitPlatformRunnerVersion = '1.2.0'
     assertjVersion = '3.9.1'
 }
