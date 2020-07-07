@@ -21,7 +21,7 @@ ext {
     jaxbApiVersion = '2.3.1'
     guavaVersion = '23.5-jre'
     gsonVersion = '2.8.6'
-    jupiterVersion = '5.3.1'
+    jupiterVersion = '5.6.2'
     junitVintageEngineVersion = '5.6.2'
     mockitoVersion = '2.23.4'
     junitPlatformRunnerVersion = '1.2.0'
