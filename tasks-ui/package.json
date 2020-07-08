@@ -27,7 +27,7 @@
     "todomvc-app-css": "^2.1.2",
     "todomvc-common": "^1.0.5",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.2",
