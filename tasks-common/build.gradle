@@ -11,7 +11,7 @@ repositories {
 ext {
     springVersion = '5.1.5.RELEASE'
     springSecurityTestVersion = '4.0.0.RELEASE'
-    springDataCommonsVersion = '2.2.4.RELEASE'
+    springDataCommonsVersion = '2.3.1.RELEASE'
     springTransactionVersion = '5.2.3.RELEASE'
     apacheCommonsLangVersion = '3.0'
     apacheHttpClientVersion = '4.5.11'
