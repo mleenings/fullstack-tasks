@@ -25,7 +25,7 @@ repositories {
 ext {
     springSecurityTestVersion = '4.0.0.RELEASE'
     springCoreVersion = '5.2.3.RELEASE'
-    apacheCommonsLangVersion = '3.0'
+    apacheCommonsLangVersion = '3.10'
     jaxbApiVersion = '2.3.1'
     guavaVersion = '23.5-jre'
     gsonVersion = '2.8.6'
