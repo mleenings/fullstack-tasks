@@ -26,7 +26,7 @@
     "rxjs": "~6.5.4",
     "todomvc-app-css": "^2.1.2",
     "todomvc-common": "^1.0.5",
-    "tslib": "^1.10.0",
+    "tslib": "^1.13.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
