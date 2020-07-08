@@ -9,7 +9,7 @@ repositories {
 }
 
 ext {
-    springVersion = '5.1.5.RELEASE'
+    springVersion = '5.2.7.RELEASE'
     springSecurityTestVersion = '4.0.0.RELEASE'
     springDataCommonsVersion = '2.2.4.RELEASE'
     springTransactionVersion = '5.2.3.RELEASE'
