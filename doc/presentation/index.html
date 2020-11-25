@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Tasks</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1 -->
+				<section>
+					<h1>Tasks</h1>
+					<br />
+					<h5>Marcel Leenings</h5>
+				</section>
+				<!-- Slide 2 -->
+				<section>
+					<h2>Technology stack</h2>
+					<img src="img/techstack-angular.png" alt="angularTS" style="width: 200px; border: none"/> <br />
+					<img src="img/techstack-springBoot.png" alt="springBoot" style="width: 200px; border: none"/> <br />
+					<img src="img/techstack-json-db.png" alt="jsonDB" style="width: 200px; border: none"/>
+				</section>
+				<!-- Slide 3 -->
+				<section>
+					<h2>Architecture</h2>
+					<img src="img/uml-module.png" alt="uml-module"/>
+				</section>
+				<!-- Slide 4 -->
+				<section>
+					<h2>Rest-API</h2>
+					<img src="img/swagger-api.PNG" alt="swagger-api"/>
+				</section>
+				<!-- Slide 5 -->
+				<section>
+					<section>
+						<div>Impression - Overview</div>
+						<img src="img/app-01.PNG" alt="app01"/>
+					</section>
+				</section>
+				<!-- Slide 6 -->
+				<section>
+					<h1>Outlook</h1>
+					<ul>
+						<li>Mobile App</li>
+						<li>Security</li>
+						<li>Validation</li>
+						<li>Acceptance/System testing with Selenium</li>
+						<li>Dockerizing (Database)</li>
+					</ul>
+				</section>
+				<!-- Slide 7 -->
+				<section>
+					<section>
+						<h2>Security Backend</h2>
+						Protect application resources from unauthorized access.
+							<ul>
+								<li>Spring Security (CSRF, Session Fixation, Security HTTP Header,...)</li>
+								<li>Authentication + Authorization</li>
+								<li>Cross-Origin Resource Sharing (CORS)</li>
+								<li>Method access</li>
+								<li>Database access</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Security Frontend</h2>
+						<ul>
+							<li>Authentication</li>
+							<li>Cross-site scripting (XSS)</li>
+							<ul>
+								<li>Identity theft</li>
+								<li>JWT (=JSON Access-Token)</li>
+						</ul>
+						<p>... always a little bit depending on the application</p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
