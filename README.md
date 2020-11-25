@@ -1,4 +1,9 @@
 # Tasks Application
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/98ca663bec894044971be473ef6f8069)](https://www.codacy.com/manual/mleenings/fullstack-tasks?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mleenings/fullstack-tasks&amp;utm_campaign=Badge_Grade)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/mleenings/fullstack-tasks/graphs/commit-activity)
+[![HitCount](http://hits.dwyl.io/mleenings/fullstack-tasks.svg)](http://hits.dwyl.io/mleenings/fullstack-tasks)
+
 This is an example project with the following technologies:
 * Gradle
 * Angular
