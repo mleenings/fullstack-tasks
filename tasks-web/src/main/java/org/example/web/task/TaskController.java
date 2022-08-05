@@ -1,13 +1,7 @@
-package org.example.web.controller;
+package org.example.web.task;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.example.domain.model.TaskModel;
-import org.example.service.TaskService;
-import org.example.web.formdata.TaskDTO;
-import org.example.web.formdata.mapper.TaskMapper;
-import org.example.web.util.HeaderUtil;
-import org.example.web.util.PaginationUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +15,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.example.task.TaskModel;
+import org.example.task.TaskService;
+import org.example.util.HeaderUtil;
+import org.example.util.PaginationUtil;
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -61,20 +59,20 @@ public class TaskController {
     /**
      * {@code POST /api/tasks} : Creates a new task.
      *
-     * @param taskDTO the task to create.
+     * @param TaskVM the task to create.
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new task
      * @throws URISyntaxException uriException if the Location URI syntax is incorrect.
      */
     @PostMapping("/tasks/")
     @ApiOperation("Creates a new task")
-    public ResponseEntity<TaskDTO> ceateTask(@Valid @RequestBody TaskDTO taskDTO)
+    public ResponseEntity<TaskVM> ceateTask(@Valid @RequestBody TaskVM TaskVM)
             throws URISyntaxException {
-        LOGGER.debug("REST request POST : /api/tasks/{}", taskDTO);
+        LOGGER.debug("REST request POST : /api/tasks/{}", TaskVM);
         try {
-            if (taskDTO.getId() != null) {
+            if (TaskVM.getId() != null) {
                 return ResponseEntity.badRequest().build();
             } else {
-                TaskDTO newTask = taskMapper.toDTO(taskService.createTask(taskMapper.toModel(taskDTO)));
+                TaskVM newTask = taskMapper.toViewModel(taskService.createTask(taskMapper.toModel(TaskVM)));
                 return ResponseEntity.created(new URI("/api/tasks/" + newTask.getId()))
                         .headers(
                                 HeaderUtil.createAlert(
@@ -90,14 +88,14 @@ public class TaskController {
     /**
      * {@code PUT /api/tasks} : Updates an existing Task.
      *
-     * @param taskDTO the task to update.
+     * @param TaskVM the task to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated task.
      */
     @PutMapping("/tasks/")
     @ApiOperation("Updates an existing task")
-    public ResponseEntity<TaskDTO> updateTask(@Valid @RequestBody TaskDTO taskDTO) {
-        LOGGER.debug("REST request PUT /tasks/{}", taskDTO);
-        taskService.updateTask(taskMapper.toModel(taskDTO));
+    public ResponseEntity<TaskVM> updateTask(@Valid @RequestBody TaskVM TaskVM) {
+        LOGGER.debug("REST request PUT /tasks/{}", TaskVM);
+        taskService.updateTask(taskMapper.toModel(TaskVM));
         return ResponseEntity.ok().build();
     }
 
@@ -108,10 +106,10 @@ public class TaskController {
      */
     @GetMapping("/tasks/")
     @ApiOperation("Returns all existing tasks")
-    public ResponseEntity<List<TaskDTO>> getAllTasks(Pageable pageable) {
+    public ResponseEntity<List<TaskVM>> getAllTasks(Pageable pageable) {
         LOGGER.debug("REST request GET: /api/tasks/");
         try {
-            final Page<TaskDTO> page = convert(taskService.findAllTasks(), pageable);
+            final Page<TaskVM> page = convert(taskService.findAllTasks(), pageable);
             HttpHeaders headers =
                     PaginationUtil.generatePaginationHttpHeaders(
                             ServletUriComponentsBuilder.fromCurrentRequest(), page);
@@ -130,21 +128,21 @@ public class TaskController {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the task to the
      * id, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/tasks/{id}")
+	@GetMapping("/tasks/{id}")
     @ApiOperation("Returns a specific task")
-    public ResponseEntity<TaskDTO> getTask(@PathVariable String id) throws URISyntaxException {
+    public ResponseEntity<TaskVM> getTask(@PathVariable String id) throws URISyntaxException {
         LOGGER.debug("REST request GET: /api/tasks/{}", id);
         try {
             Optional<TaskModel> taskModel = taskService.getTask(id);
             if (taskModel.isPresent()) {
-                TaskDTO dto = taskMapper.toDTO(taskModel.get());
-                return ResponseEntity.created(new URI("/api/tasks/" + dto.getId()))
+                TaskVM task = taskMapper.toViewModel(taskModel.get());
+                return ResponseEntity.created(new URI("/api/tasks/" + task.getId()))
                         .headers(
                                 HeaderUtil.createAlert(
-                                        applicationName, "userManagement.created", String.valueOf(dto.getId())))
-                        .body(dto);
+                                        applicationName, "userManagement.created", String.valueOf(task.getId())))
+                        .body(task);
             } else {
-                return (ResponseEntity<TaskDTO>) ResponseEntity.notFound();
+            	return new ResponseEntity<TaskVM>(HttpStatus.NOT_FOUND);
             }
         } catch (Throwable t) {
             LOGGER.error(t.getMessage(), t);
@@ -174,17 +172,19 @@ public class TaskController {
     }
 
     /**
-     * Convert a list of {@link TaskModel} to a Page<TaskDTO>
+     * Convert a list of {@link TaskModel} to a Page<TaskModel>
      *
      * @param tasks    - a list of TaskModels
      * @param pageable - the pagination information
      * @return a page, a sublist of a list of objects
      */
-    private Page<TaskDTO> convert(List<TaskModel> tasks, Pageable pageable) {
+    private Page<TaskVM> convert(List<TaskModel> tasks, Pageable pageable) {
         int start = Math.toIntExact(pageable.getOffset());
         int end = Math.toIntExact(Math.min((start + pageable.getPageSize()), tasks.size()));
         return new PageImpl<>(
-                tasks.subList(start, end).stream().map(TaskDTO::new).collect(Collectors.toList()),
+                tasks.subList(start, end).stream()
+                		.map(m -> taskMapper.toViewModel(m))
+                		.collect(Collectors.toList()),
                 pageable,
                 tasks.size());
     }

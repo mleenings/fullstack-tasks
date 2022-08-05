@@ -1,8 +1,10 @@
 package org.example.service;
 
 import io.jsondb.InvalidJsonDbApiUsageException;
-import org.example.domain.model.TaskModel;
-import org.example.repository.StandardTaskRepository;
+import org.example.task.TaskModel;
+import org.example.task.JsonDbTaskRepository;
+import org.example.task.TaskService;
+import org.example.task.StandardTaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,7 +27,7 @@ import static org.mockito.Mockito.*;
 @RunWith(JUnitPlatform.class)
 public class StandardTaskServiceTest {
     @Mock
-    private StandardTaskRepository repository;
+    private JsonDbTaskRepository repository;
     private TaskService service;
 
     @BeforeEach

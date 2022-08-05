@@ -1,80 +1,101 @@
-package org.example.web.formdata.mapper;
+package org.example.web.task;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.domain.model.TaskModel;
-import org.example.web.formdata.TaskDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.example.web.Mapper;
+import org.example.task.TaskModel;
+import org.example.util.CustomSerializerProvider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
-public class TaskMapper implements Mapper {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TaskMapper.class);
-
-    @Override
-    public TaskDTO toDTO(TaskModel model) {
-        return new TaskDTO(model);
+public class TaskMapper implements Mapper<TaskModel, TaskVM> {
+  
+  @Override
+  public TaskModel toModel(TaskVM vm) {
+    final TaskModel model;
+    if(vm == null) {
+    	model = new TaskModel();
+    } else {
+    	model = TaskModel.builder()
+    			.id(vm.getId())
+    			.text(vm.getText())
+    			.done(vm.isDone())
+    			.build();
     }
+    return model;
+  }
 
-    @Override
-    public List<TaskDTO> toDTOs(List<TaskModel> models) {
-        return models.stream().filter(Objects::nonNull).map(this::toDTO).collect(Collectors.toList());
-    }
+  @Override
+  public List<TaskModel> toModelList(List<TaskVM> models) {
+    return models.stream().filter(Objects::nonNull).map(this::toModel).collect(Collectors.toList());
+  }
 
-    @Override
-    public TaskModel toModel(TaskDTO dto) {
-        TaskModel model;
-        if (dto == null) {
-            model = null;
-        } else {
-            model = new TaskModel();
-            model.setId(dto.getId());
-            model.setText(dto.getText());
-            model.setDone(dto.isDone());
-        }
-        return model;
+  @Override
+  public TaskVM toViewModel(TaskModel model) {
+	  TaskVM vm;
+    if (model == null) {
+      vm = null;
+    } else {
+      vm = TaskVM.builder()
+  			.id(model.getId())
+  			.text(model.getText())
+  			.done(model.isDone())
+  			.build();
     }
+    return vm;
+  }
 
-    @Override
-    public List<TaskModel> toModels(List<TaskDTO> dtos) {
-        return dtos.stream().filter(Objects::nonNull).map(this::toModel).collect(Collectors.toList());
-    }
+  @Override
+  public List<TaskVM> toViewModelList(List<TaskModel> models) {
+    return models.stream().filter(Objects::nonNull).map(this::toViewModel).collect(Collectors.toList());
+  }
+  
+  @Override
+  public TaskModel[] toModelArray(TaskVM[] models) {
+	    return Arrays.asList(models).stream()
+	            .filter(Objects::nonNull)
+	            .map(this::toModel)
+	            .collect(Collectors.toList())
+	            .toArray(new TaskModel[models.length]);
+  }
 
-    @Override
-    public TaskModel fromId(String id) {
-        TaskModel model = null;
-        if (id != null) {
-            model = new TaskModel();
-            model.setId(id);
-        }
-        return model;
-    }
+  @Override
+  public TaskVM[] toViewModelArray(TaskModel[] tos) {
+	    return Arrays.asList(tos).stream()
+	            .filter(Objects::nonNull)
+	            .map(this::toViewModel)
+	            .collect(Collectors.toList())
+	            .toArray(new TaskVM[tos.length]);
+  }
 
-    @Override
-    public String toJson(Object obj) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            return objectMapper.writeValueAsString(obj);
-        } catch (JsonProcessingException e) {
-            LOGGER.error(e.getMessage(), e);
-        }
-        return null;
-    }
+  @Override
+  public String toJson(Object obj) throws JsonProcessingException {
+    ObjectMapper om = new ObjectMapper();
+    om.setSerializerProvider(new CustomSerializerProvider());
+    return om.writeValueAsString(obj);
+  }
 
-    @Override
-    public <T> T fromJson(String json, Class<T> clazz) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            return objectMapper.readValue(json, clazz);
-        } catch (IOException e) {
-            LOGGER.error(e.getMessage(), e);
-        }
-        return null;
-    }
+  @Override
+  public <T> T fromJson(String json, Class<T> clazz) {
+    T obj = null;
+    try {
+      obj = new ObjectMapper().readValue(json, clazz);
+    } catch (JsonMappingException e) {
+      log.error(e.getMessage(), e);
+    } catch (JsonProcessingException e) {
+      log.error(e.getMessage(), e);
+    } catch (IOException e) {
+    	log.error(e.getMessage(), e);
+	}
+    return obj;
+  }
 }

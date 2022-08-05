@@ -1,7 +1,5 @@
 package org.example.task;
 
-import org.example.domain.model.TaskModel;
-
 import java.util.List;
 import java.util.Optional;
 

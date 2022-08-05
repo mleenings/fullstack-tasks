@@ -1,6 +1,11 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+}
 
-sourceCompatibility = '1.9'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -37,6 +42,11 @@ dependencies {
     implementation group: "org.springframework", name: "spring-core", version: "${springCoreVersion}"
     // Annotation
     implementation group: "javax.annotation", name: "javax.annotation-api", version: "${javaxAnnotationApiVersion}"
+    // Lombok
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
     // Apache
     implementation "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
     testImplementation "org.apache.httpcomponents:httpclient:${apacheHttpClientVersion}"

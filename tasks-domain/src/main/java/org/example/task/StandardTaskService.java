@@ -2,8 +2,6 @@ package org.example.task;
 
 import com.google.common.collect.Lists;
 import io.jsondb.InvalidJsonDbApiUsageException;
-import org.example.domain.model.TaskModel;
-import org.example.repository.TaskRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-class StandardTaskService implements TaskService {
+public class StandardTaskService implements TaskService {
     private static final Logger LOGGER = LoggerFactory.getLogger(StandardTaskService.class);
 
     private TaskRepository repository;

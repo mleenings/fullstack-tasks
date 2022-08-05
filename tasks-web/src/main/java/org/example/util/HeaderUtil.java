@@ -1,4 +1,4 @@
-package org.example.web.util;
+package org.example.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

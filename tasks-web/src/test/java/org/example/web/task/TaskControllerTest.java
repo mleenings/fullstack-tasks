@@ -1,10 +1,8 @@
-package org.example.web.controller;
+package org.example.web.task;
 
 import org.example.Application;
-import org.example.domain.model.TaskModel;
-import org.example.repository.StandardTaskRepository;
-import org.example.web.formdata.TaskDTO;
-import org.example.web.formdata.mapper.Mapper;
+import org.example.task.JsonDbTaskRepository;
+import org.example.task.TaskModel;
 import org.junit.After;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,11 +38,11 @@ public class TaskControllerTest {
     private static final String REQUEST_URI = REQUEST_PREFIX + REQUEST_SUFFIX;
     private static MockMvc mvc;
     @Autowired
-    private StandardTaskRepository repository;
+    private JsonDbTaskRepository repository;
     @Autowired
     private WebApplicationContext webApplicationContext;
     @Autowired
-    private Mapper mapper;
+    private TaskMapper mapper;
 
     @After
     public void after() {
@@ -78,9 +76,9 @@ public class TaskControllerTest {
         int status = mvcResult.getResponse().getStatus();
         Assertions.assertEquals(201, status);
         String content = mvcResult.getResponse().getContentAsString();
-        TaskDTO actualTask = mapper.fromJson(content, TaskDTO.class);
+        TaskVM actualTask = mapper.fromJson(content, TaskVM.class);
         actualTask.setId(null);
-        Assertions.assertEquals(new TaskDTO(expectedTask), actualTask);
+        Assertions.assertEquals(mapper.toViewModel(expectedTask), actualTask);
     }
 
     @Test
@@ -95,7 +93,7 @@ public class TaskControllerTest {
         int status = mvcResult.getResponse().getStatus();
         Assertions.assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        TaskDTO[] tasks = mapper.fromJson(content, TaskDTO[].class);
+        TaskVM[] tasks = mapper.fromJson(content, TaskVM[].class);
         Assertions.assertEquals(expected.size(), tasks.length);
         Assertions.assertEquals(createTask(text, 1).getText(), tasks[0].getText());
     }
@@ -111,7 +109,7 @@ public class TaskControllerTest {
         int status = mvcResult.getResponse().getStatus();
         Assertions.assertEquals(201, status);
         String content = mvcResult.getResponse().getContentAsString();
-        TaskDTO task = mapper.fromJson(content, TaskDTO.class);
+        TaskVM task = mapper.fromJson(content, TaskVM.class);
         Assertions.assertEquals(task.getId(), saved.get(0).getId());
     }
 
@@ -159,11 +157,11 @@ public class TaskControllerTest {
         return task;
     }
 
-    private void assertEquals(TaskDTO dto, TaskModel model) {
-        assertEquals(model, dto);
+    private void assertEquals(TaskVM vm, TaskModel model) {
+        assertEquals(model, vm);
     }
 
-    private void assertEquals(TaskModel model, TaskDTO dto) {
-        Assertions.assertEquals(model.toString(), dto.toString());
+    private void assertEquals(TaskModel model, TaskVM vm) {
+        Assertions.assertEquals(model.toString(), vm.toString());
     }
 }

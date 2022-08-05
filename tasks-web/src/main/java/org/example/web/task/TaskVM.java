@@ -1,65 +1,38 @@
-package org.example.web.formdata;
+package org.example.web.task;
 
-import com.google.gson.Gson;
-import org.example.domain.model.TaskModel;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.example.util.CustomSerializerProvider;
 
-import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
-import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class TaskVM {
 
-    private String id;
-    private String text;
-    private boolean done;
+    String id;
+    String text;
+    boolean done;
 
-    public TaskVM() {
-        // Empty constructor needed for Jackson.
-    }
-
-    public TaskVM(TaskModel model) {
-        if (model != null) {
-            id = model.getId();
-            text = model.getText();
-            done = model.isDone();
-        }
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
+    @SneakyThrows
     @Override
     public String toString() {
-        return new Gson().toJson(this);
+      ObjectMapper om = new ObjectMapper();
+      om.setSerializerProvider(new CustomSerializerProvider());
+      return om.writeValueAsString(this);
     }
 
     @Override
     public boolean equals(Object o) {
-        return reflectionEquals(this, o);
+      return EqualsBuilder.reflectionEquals(this, o);
     }
 
     @Override
     public int hashCode() {
-        return reflectionHashCode(this);
+      return HashCodeBuilder.reflectionHashCode(this);
     }
 }

@@ -1,11 +1,10 @@
-package org.example.repository;
+package org.example.task;
 
 import com.google.common.annotations.VisibleForTesting;
 import io.jsondb.InvalidJsonDbApiUsageException;
 import io.jsondb.JsonDBTemplate;
 import io.jsondb.crypto.Default1Cipher;
 import io.jsondb.crypto.ICipher;
-import org.example.domain.model.TaskModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,7 +21,7 @@ import java.util.stream.StreamSupport;
 
 @Service
 public class JsonDbTaskRepository implements TaskRepository {
-    private static final Logger LOGGER = LoggerFactory.getLogger(StandardTaskRepository.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(JsonDbTaskRepository.class);
     private static final String DB_PATH = "db";
     private static final String ENCRYPTION_KEY = "1r8+24pibarAWgS85/Heeg==";
     private static final String NOT_SUPPORTED = "This method is not supported!";
@@ -30,7 +29,7 @@ public class JsonDbTaskRepository implements TaskRepository {
     @Value("${db.path}")
     private String dbPath;
 
-    public StandardTaskRepository() {
+    public JsonDbTaskRepository() {
         // default constructor
     }
 

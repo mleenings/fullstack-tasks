@@ -1,71 +1,47 @@
 package org.example.task;
 
+import org.example.util.CustomSerializerProvider;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.google.gson.Gson;
 import io.jsondb.annotation.Document;
 import io.jsondb.annotation.Id;
 import io.jsondb.annotation.Secret;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
-import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
-
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Document(collection = "tasks", schemaVersion = "1.0")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TaskModel {
 
-    @Id
-    private String id;
+  @Id
+  String id;
+  @Secret
+  String privateKey;
+  String text;
+  boolean done;
 
-    @Secret
-    private String privateKey;
+  @SneakyThrows
+  @Override
+  public String toString() {
+    final ObjectMapper om = new ObjectMapper();
+    om.setSerializerProvider(new CustomSerializerProvider());
+    return om.writeValueAsString(this);
+  }
 
-    private String text;
-    private boolean done;
+  @Override
+  public boolean equals(Object o) {
+    return EqualsBuilder.reflectionEquals(this, o);
+  }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPrivateKey() {
-        return privateKey;
-    }
-
-    public void setPrivateKey(String privateKey) {
-        this.privateKey = privateKey;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
-    @Override
-    public String toString() {
-        return new Gson().toJson(this);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return reflectionEquals(this, o);
-    }
-
-    @Override
-    public int hashCode() {
-        return reflectionHashCode(this);
-    }
+  @Override
+  public int hashCode() {
+    return HashCodeBuilder.reflectionHashCode(this);
+  }
 }
