@@ -7,9 +7,6 @@
 |===
 |Term |Definition
 
-|<Term-1>
-|<definition-1>
+|Task
+|The Todo-element
 
-|<Term-2>
-|<definition-2>
-|===

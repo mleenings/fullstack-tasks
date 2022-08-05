@@ -6,7 +6,7 @@ Date: 2022-01-01
 Accepted
 
 ==== Context
-How want I structure the project?
+How I want structure the project?
 
 ==== Decision
 package-by-component concept.

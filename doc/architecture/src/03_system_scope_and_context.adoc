@@ -1,17 +1,20 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
+[.text-center]
+System Context diagram for Fullstack-Tasks
 
-<C4 Model Diagram: Level 1: System Context diagram>
-<C4 Model Diagram: System Landscape diagram>
-
-
+image::../images/system-context-diagram.drawio.png[align="center"]
 
 === Business Context
+[.text-center]
+Container diagram for Fullstack-Tasks
 
-<C4 Model Diagram: Level 2: Container diagram>
-or maybe UML 'context diagram'
+image::../images/container-diagram.drawio.png[align="center"]
+
 
 
 === Technical Context
+[.text-center]
+Component diagram for Fullstack-Tasks
 
-<C4 Model Diagram: Level 3: Component diagram>
+image::../images/component-diagram.drawio.png[align="center"]

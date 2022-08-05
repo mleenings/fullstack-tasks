@@ -1,9 +1,5 @@
 = Development Guide
-
 include::src/config.adoc[]
-
-// horizontal line
-***
 
 // numbering from here on
 :numbered:

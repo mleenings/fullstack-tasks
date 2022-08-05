@@ -1,4 +1,4 @@
-=== File-based Database
+=== File Based Database
 
 Date: 2022-01-01
 
@@ -6,10 +6,10 @@ Date: 2022-01-01
 Accepted
 
 ==== Context
-Develop first the API in the frontend. The reason for this approach is that we want to be independent for the rear backend api's. The backend for the frontend (bff) need to handle that stable api will be really stable.
+First approach was a Docker Container with a MongoDB, but at the start of the project it was not possible to install docker. So we will choose a different MongoDB similar DB without a Docker Container or big database overhead.
 
 ==== Decision
-The API-First principle is implemented
+JsonDB is a lightweight Json-file database.
 
 ==== Consequences
-Fewer changes to the API structure.
+File-system database is not central, but for this example it is good enough.

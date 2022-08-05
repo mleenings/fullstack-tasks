@@ -3,39 +3,15 @@
 
 == Deployment View
 
-<C4 Deployment Diagram>
-or UML deploymnet diagram or CoCoME deployment diagram
+Deployment diagram for the fullstack-tasks stystem.
 
-=== Infrastructure Level 1
+image::../images/deployment-diagram.drawio.png[]
 
-
-
-_**<Overview Diagram>**_
-
-Motivation::
-
-_<explanation in text form>_
-
-Quality and/or Performance Features::
-
-_<explanation in text form>_
-
-Mapping of Building Blocks to Infrastructure::
-_<description of the mapping>_
-
-
-=== Infrastructure Level 2
-
-
-
-==== _<Infrastructure Element 1>_
-
-_<diagram + explanation>_
 
 ==== _DevOps_
 
-image::dev-ops.drawio.png[]
+image::../images/dev-ops.drawio.png[]
 
 ==== _Git Workflow_
 
-image::git-workflow.png[]
+image::../images/git-workflow.png[]

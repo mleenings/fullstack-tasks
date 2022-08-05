@@ -1,10 +1,7 @@
 :npm-name: asciidoctor-highlight.js
 :gh-name: jirutka/{npm-name}
-
 :toc-title: Table of contents
-
 // enable table-of-contents
 :toc:
-
 // where are images located?
 :imagesdir: ./images

@@ -2,5 +2,13 @@
 == Technologies and Versions
 Project is created with:
 
-* Java (Version 17)
-* Maven (works with Version 3.6.3)
+* Java (11.0.6)
+* Node (v10.19.0) and npm (6.13.7)
+* Gradle (6.1.1)
+* Angular CLI (1.7.4)
+* REST
+* SpringBoot
+* JsonDB (http://jsondb.io/)
+* Styling TodoMVC CSS (https://github.com/tastejs/todomvc-app-css)
+
+With the script `bin/check-version.sh` you can check your installations and versions.

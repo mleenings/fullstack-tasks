@@ -1,20 +1,23 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
-For the agile process the interface to the backend will change very often, so there is a 'backend for frontend' (BFF), so that we do not change in every sprint the api interface. We have a consistent api interface to the BFF and data format, so the BFF handle the api changes from the backend. So the Adapter will do the following:
-
-* Call the relevant ECP API
-* Ensures a fixed frontend api
-* Format the data based on the frontend representation
-* Send the formatted data to the frontend
+Simple Example Full-Stack Application with simple CRUD operation.
 
 === Requirements Overview
-<big picture like c4: context view>
+CRUD-Operations should be working.
 
 ==== Functional Requirements
-* ...
+* create Task
+* read Task(s)
+* update Task
+* delete Task
+* Responsive Design
+* Java Backend and JavaScript Frontend
 
 ==== Non-Functional Requirements
-* ...
+* Clean Code
+* Low Fault Tolerance
+* Any Platform
+* Documentation
 
 === Quality Goals
 [options="header",cols="1,4"]
@@ -27,10 +30,9 @@ For the agile process the interface to the backend will change very often, so th
 
 
 === Stakeholders
-
 [options="header",cols="1,2,2"]
 |===
 |Role/Name|Contact|Expectations
-| _Developers_ | _dev@example.com_ | _Develop the application._
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
+| _Myself_ | _---_ | _Develop the application._
+| _Curious people_ | _---_ | _Learn about my developer skills._
 |===

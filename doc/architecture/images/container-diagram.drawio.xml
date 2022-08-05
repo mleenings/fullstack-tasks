@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2022-08-04T13:03:27.002Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/19.0.3 Chrome/102.0.5005.63 Electron/19.0.3 Safari/537.36" etag="QFG59ztPsfo4scIL5r1a" version="19.0.3" type="device">
+  <diagram id="jZDUCDa-boO5IKCTVnhj" name="Page-1">
+    <mxGraphModel dx="1298" dy="845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iHxJUbtAHAGmZaiCcGav-8" value="Visits and Interact with" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="iHxJUbtAHAGmZaiCcGav-1" target="iHxJUbtAHAGmZaiCcGav-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="User" c4Type="Person" c4Description="Any User." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="iHxJUbtAHAGmZaiCcGav-1">
+          <mxCell style="html=1;fontSize=11;dashed=0;whitespace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="300" y="40" width="200" height="180" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="iHxJUbtAHAGmZaiCcGav-9" value="Makes API calls to&lt;br&gt;&lt;span style=&quot;color: rgb(38, 38, 38);&quot;&gt;[JSON/HTTP]&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="iHxJUbtAHAGmZaiCcGav-2" target="iHxJUbtAHAGmZaiCcGav-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Type="Single-Page Application" c4Container="Container " c4Technology="JavaScript, Angular" c4Description="Provides all the Tasks functionality via web browser." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="iHxJUbtAHAGmZaiCcGav-2">
+          <mxCell style="shape=mxgraph.c4.webBrowserContainer;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#118ACD;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="280" y="300" width="240" height="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Type="Database" c4Container="Container " c4Technology="JsonDB" c4Description="Stores Tasks" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Type%&lt;/font&gt;&lt;div&gt;[%c4Container%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="iHxJUbtAHAGmZaiCcGav-3">
+          <mxCell style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="280" y="910" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="iHxJUbtAHAGmZaiCcGav-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="iHxJUbtAHAGmZaiCcGav-5" target="iHxJUbtAHAGmZaiCcGav-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="iHxJUbtAHAGmZaiCcGav-13" value="&lt;br&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="iHxJUbtAHAGmZaiCcGav-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.18" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iHxJUbtAHAGmZaiCcGav-14" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="iHxJUbtAHAGmZaiCcGav-10" vertex="1" connectable="0">
+          <mxGeometry x="-0.16" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="Web Component" c4Type="Container" c4Technology="SpringBoot" c4Description="Provides Tasks functionallity via JSON/HTTP API." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="iHxJUbtAHAGmZaiCcGav-5">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="280" y="530" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="iHxJUbtAHAGmZaiCcGav-11" value="Reads from and writes to&lt;br&gt;[&lt;span style=&quot;color: rgb(38, 38, 38);&quot;&gt;JsonDBTemplate&lt;/span&gt;]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="iHxJUbtAHAGmZaiCcGav-6" target="iHxJUbtAHAGmZaiCcGav-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Domain Component" c4Type="Container" c4Technology="Spring" c4Description="Handle the Taks from the UI, operate with it and saves to the Database" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="iHxJUbtAHAGmZaiCcGav-6">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="280" y="720" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="j8Vl_zZAloZzQCKGuYaB-2" value="Tasks System&lt;br&gt;[Softwarre System]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;align=left;horizontal=1;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="250" y="280" width="310" height="800" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

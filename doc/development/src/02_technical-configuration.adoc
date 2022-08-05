@@ -1,33 +1,27 @@
 [[section-technical-configuration]]
 == Technical configuration
-
-Architecture: [http://thieme-cb.test-server.ag:8080/cb/category/12256](http://thieme-cb.test-server.ag:8080/cb/category/12256) +
 Formatter: google-java-format (installation via Plugin for IDE) +
 Local run, Swagger is running under: [localhost:8080/swagger-ui.html](localhost:8080/swagger-ui.html) +
-Use SonarLint (IDE Plugin) for code quality checks. (TODO: SonarLint/SonarQube with docker?)
+Use SonarLint (IDE Plugin) for code quality checks.
 
-Running with different profiles:
+=== Technical configuration
 
-* prod: default, for prod system, with the real ecp backend (or no profile)
-* mock: with mocked data from ecp
-* rev: with mocked data for the review
-
-[source]
-----
-> mvn spring-boot:run -Dspring-boot.run.profiles=prod
-> mvn spring-boot:run -Dspring-boot.run.profiles=mock
-> mvn spring-boot:run -Dspring-boot.run.profiles=rev
-// or
-> mvn spring-boot:run -P mock
-> mvn spring-boot:run -P prod
-> mvn spring-boot:run -P rev
-----
-
-or default (without profile):
-
-[source]
-----
-> mvn spring-boot:run
-----
-
-or you can run with IDE run configurations: for example in IntelliJ: 'Active profiles: mock'
+==== Windows with Ubuntu Bash
+* Java (11.0.6)
+```bash
+apt-get install default-jdk
+```
+* Node (v10.19.0) and npm (6.13.7):
+```bash
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install nodejs
+```
+* Angular CLI (1.7.4)
+```bash
+ npm install -g @angular/cli@1.7.4
+```
+Gradle (6.1.1)
+```bash
+sudo apt install gradle
+```
+(or use _./gradlew_ instead of _gradle_)

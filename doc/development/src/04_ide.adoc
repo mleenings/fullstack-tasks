@@ -27,23 +27,53 @@ You can choose "Spring Boot" and then configure:
 
 Start the Application as normal Java Application
 
-* Configure the argument for the profile: --spring.profiles.active=mock
-
-==== Configuration
-
-You have different configuration in this application, one default for production and one spring profile ```mock``` to
-mock e.g. the erp server:
-
-[source]
-----
-> mvn spring-boot:run -Dspring-boot.run.profiles=mock
-----
-
-and in the ide you can add a new 'run configuration' with 'Active profiles' = 'mock'. If you configure nothing, you
-start with the production system.
-
 === Eclipse
 ...
 
 === VS Code
-...
+Extensions:
+
+* Angular Essentials
+* Angular Snippets
+* Auto Import
+* Code Spell Checker
+* CSS Intellisense
+* CSS Peek
+* Debugger for Firefox
+* Debugger for Chrome
+* ESLint
+* Git Blame
+* Git Diff and Merge Tool
+* Git Extension Pack
+* Git Graph
+* Git History
+* Git History Diff
+* Git Merger
+* Git Tree Compare
+* gitignore
+* GitLens
+* HTML CSS Support
+* IntelliJ IDEA Keybindings
+* IntelliSense for CSS class names in HTML
+* JavaScript (ES6) code snippets
+* js-intellisense
+* LintLens
+* Live Preview
+* Live Sass Compiler
+* Local History
+* Markdown All in One
+* Markdown Editor
+* Material Icon THeme
+* Path Intellisense
+* Peacock
+* Prettier
+* Preview
+* Rainbow Brackets
+* SonarLint
+* StyleLint
+* Todo Tree
+* TypeScript Importer
+* vsPrettier
+* vscode-icons
+* XML Tools
+* YAML

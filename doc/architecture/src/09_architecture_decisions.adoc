@@ -1,9 +1,8 @@
 [[section-design-decisions]]
 == Architecture Decisions
 
-// example
-include::adrs/0000-example.adoc[]
+include::adrs/0000-package-component.adoc[]
 
 ***
 
-include::adrs/0001-api_first.adoc[]
+include::adrs/0001-fbd.adoc[]

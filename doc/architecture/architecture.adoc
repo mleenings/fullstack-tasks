@@ -1,9 +1,5 @@
-= Architecture Documentation of the doctor-app adapter
-
+= Architecture Documentation
 include::src/config.adoc[]
-
-// horizontal line
-***
 
 // numbering from here on
 :numbered:
