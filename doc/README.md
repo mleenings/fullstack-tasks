@@ -12,7 +12,7 @@ The Documentation of the application.
 
 The following is included:
 * architecture documentation (arc42)
-* development guide
+* development documentation
 * presentation
 
 ## Installation
