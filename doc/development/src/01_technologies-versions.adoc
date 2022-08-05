@@ -1,0 +1,6 @@
+[[section-technologies-versions]]
+== Technologies and Versions
+Project is created with:
+
+* Java (Version 17)
+* Maven (works with Version 3.6.3)

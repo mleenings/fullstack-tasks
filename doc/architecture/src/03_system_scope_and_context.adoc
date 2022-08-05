@@ -1,0 +1,17 @@
+[[section-system-scope-and-context]]
+== System Scope and Context
+
+<C4 Model Diagram: Level 1: System Context diagram>
+<C4 Model Diagram: System Landscape diagram>
+
+
+
+=== Business Context
+
+<C4 Model Diagram: Level 2: Container diagram>
+or maybe UML 'context diagram'
+
+
+=== Technical Context
+
+<C4 Model Diagram: Level 3: Component diagram>

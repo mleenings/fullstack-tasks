@@ -1,0 +1,24 @@
+[[section-architecture-constraints]]
+== Architecture Constraints
+
+=== technical boundary conditions
+[options="header",cols="1,4"]
+|===
+|boundary condition|Explanations, background
+| Hardware specifications | There were no specific availability requirements or the recoverability of the hardware formulated by the client.
+| Software Defaults | The GitLab-Stack is in use.
+| user interface | The user interface works with flutter and is another project. The communication with the frontend works via REST.
+| specifications of system operation | The system operation is on a windows remote computer (no windows server).
+| programming defaults | Implementation should be done in Java with check for jacoco, pmd, spotbugs and owasp.
+| data structure | Data structure must be coordinated with the backend
+|===
+
+=== organizational boundary conditions
+[options="header",cols="1,4"]
+|===
+|boundary condition|Explanations, background
+| organization and structure | The team consists of a pure adesso team. Other stakeholders are the chapter to extract stakeholders.
+| Time schedule | Start of development in November 2021. Every 4 weeks a executable increment of the prototype can be delivered. completion of version 1.0 after 16 weeks of development.
+| organizational standards | The software is designed to be incremental and iterative using the Scrum frameworks and the rules defined therein and procedures are developed. To document the architecture arc42 is used. The project documentation should be in Atlassian Confluence Wiki to be created. The management of work packages should be done using Atlassian JIRA.
+| development tools | Creation of the Java source code in any development environment. The software must also be buildable alone with Maven, i.e. without an IDE, in order to enable automation of the deployment. As version Control System should use Git. The administration of Git repositories should be done using GitLab.).
+|===

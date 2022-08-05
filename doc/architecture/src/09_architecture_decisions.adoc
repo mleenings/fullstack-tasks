@@ -1,0 +1,9 @@
+[[section-design-decisions]]
+== Architecture Decisions
+
+// example
+include::adrs/0000-example.adoc[]
+
+***
+
+include::adrs/0001-api_first.adoc[]

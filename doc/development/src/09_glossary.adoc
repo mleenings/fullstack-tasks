@@ -1,0 +1,7 @@
+[[section-glossary]]
+== Glossary
+
+[source]
+----
+include::glossary.json[]
+----

@@ -1,0 +1,5 @@
+[[section-faq]]
+== FAQ
+
+1. **Question**
+* _Answer_

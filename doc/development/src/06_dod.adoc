@@ -1,0 +1,30 @@
+[[section-dod]]
+== Definition of Done
+
+=== Feature/User Story
+* Acceptance criteria are met
+* Refactoring is complete
+* Code builds with no error
+* Unit tests are written and pass
+* Existing Unit Tests pass
+* Software is runnable correctly
+* Sufficient diagnostics/telemetry are logged
+* UX review is complete (if applicable)
+* Documentation is updated
+* Lint Tools analyzed the Code and new issues are fixed
+* Code review is complete
+* The feature is merged into the develop branch
+* Ticket for the code is pushed in Jira to test row
+
+=== Sprint Goal
+* Definition of Done for all user stories included in the sprint are met
+* Product backlog is updated
+* Functional and Integration tests pass
+* Performance tests pass
+* End 2 End tests pass
+* All bugs are fixed
+* The sprint is signed off from developers, software architects, project manager, product owner etc.
+
+=== Release/Milestone
+* Code Complete (goals of sprints are met)
+* Release is marked as ready for production deployment by product owner

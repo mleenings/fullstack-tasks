@@ -1,0 +1,4 @@
+[[section-references]]
+== References
+* xref:../architecture/architecture.adoc[architecture.adoc]
+* http://thieme-cb.test-server.ag:8080/cb/category/12256

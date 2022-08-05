@@ -1,0 +1,15 @@
+=== Architecture Principle
+
+Date: 2022-01-01
+
+==== Status
+Accepted
+
+==== Context
+How want I structure the project?
+
+==== Decision
+package-by-component concept.
+
+==== Consequences
+I can not access from the web-component to the database, but that should impede the principle.

@@ -1,0 +1,15 @@
+=== File-based Database
+
+Date: 2022-01-01
+
+==== Status
+Accepted
+
+==== Context
+Develop first the API in the frontend. The reason for this approach is that we want to be independent for the rear backend api's. The backend for the frontend (bff) need to handle that stable api will be really stable.
+
+==== Decision
+The API-First principle is implemented
+
+==== Consequences
+Fewer changes to the API structure.

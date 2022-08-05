@@ -1,0 +1,45 @@
+= Development Guide
+
+include::src/config.adoc[]
+
+// horizontal line
+***
+
+// numbering from here on
+:numbered:
+
+<<<<
+// 1. Technologies and Versions
+include::src/01_technologies-versions.adoc[]
+
+<<<<
+// 2. Technical Configuration
+include::src/02_technical-configuration.adoc[]
+
+<<<<
+// 3. Version Control System
+include::src/03_vcs.adoc[]
+
+<<<<
+// 4. IDE
+include::src/04_ide.adoc[]
+
+<<<<
+// 5. Collaboration
+include::src/05_collaboration.adoc[]
+
+<<<<
+// 6. DoD
+include::src/06_dod.adoc[]
+
+<<<<
+// 7. FAQ
+include::src/07_faq.adoc[]
+
+<<<<
+// 8. References
+include::src/08_references.adoc[]
+
+<<<<
+// 9. Glossary
+include::src/09_glossary.adoc[]

@@ -1,0 +1,6 @@
+[[section-collaboration]]
+== Collaboration
+
+* ECP Team
+* Dev-Ops Team
+* possibly Team of Patient-App

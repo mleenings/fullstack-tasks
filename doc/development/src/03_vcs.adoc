@@ -1,0 +1,47 @@
+[[section-version-control-system]]
+== Version-Control-System
+
+=== Commit Rule
+
+The commit message must always adhere to the following structure
+
+[source]
+----
+#111 commit-message
+----
+
+The number should be the ticket number.
+
+_Smart would be this rule:_<br>
+Format: `#<ticket-number> - <type>: <subject>`
+
+Example:
+
+[source]
+----
+#111 - feat: add hat wobble
+^--^   ^--^  ^------------^
+|         |     |
+|         |     +-> Summary in present tense.
+|         |
+|         +-------> Type: chore, docs, feat, fix, refactor, style, or test.
++-> ticket-number
+----
+
+- `feat`: (new feature for the user, not a new feature for build script)
+- `fix`: (bug fix for the user, not a fix to a build script)
+- `docs`: (changes to the documentation)
+- `style`: (formatting, missing semi colons, etc; no production code change)
+- `refactor`: (refactoring production code, eg. renaming a variable)
+- `test`: (adding missing tests, refactoring tests; no production code change)
+- `chore`: (updating grunt tasks etc; no production code change)
+
+=== Branch Rule
+
+[source]
+----
+typ/123_some_text
+----
+
+- `typ`: feature or fix
+- `123_some_text`: summary in present tense

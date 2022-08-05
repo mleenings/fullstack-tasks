@@ -1,0 +1,49 @@
+[[section-ide]]
+== IDE
+
+=== IntelliJ
+
+The following plugins might be useful:
+
+* Git Conflict
+* GitToolBox
+* google-java-format
+* JRebel
+* Maven Helper
+* SonarLint
+* Spotbugs
+* Spring Tools
+* Spring Boot
+* Save Actions
+
+==== Start in IntelliJ
+
+You can choose "Spring Boot" and then configure:
+
+* Main class: com.thieme.doctor.Application
+* Active profiles: mock (or the profile you want)
+
+==== Start in IntelliJ Community
+
+Start the Application as normal Java Application
+
+* Configure the argument for the profile: --spring.profiles.active=mock
+
+==== Configuration
+
+You have different configuration in this application, one default for production and one spring profile ```mock``` to
+mock e.g. the erp server:
+
+[source]
+----
+> mvn spring-boot:run -Dspring-boot.run.profiles=mock
+----
+
+and in the ide you can add a new 'run configuration' with 'Active profiles' = 'mock'. If you configure nothing, you
+start with the production system.
+
+=== Eclipse
+...
+
+=== VS Code
+...
