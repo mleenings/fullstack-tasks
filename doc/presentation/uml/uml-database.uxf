@@ -9,7 +9,7 @@
       <w>730</w>
       <h>360</h>
     </coordinates>
-    <panel_attributes>training-common</panel_attributes>
+    <panel_attributes>tasks-domain</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -21,7 +21,7 @@
       <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-BookingRepository
+TaskRepository
 --
 </panel_attributes>
     <additional_attributes/>
@@ -61,7 +61,7 @@ CrudRepository
       <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
-TrainingRepository
+TaskRepository
 --
 </panel_attributes>
     <additional_attributes/>
@@ -85,9 +85,9 @@ TrainingRepository
       <w>210</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>InMemoryTrainingRepository
+    <panel_attributes>InMemoryTasksRepository
 --
-_-BOOKING_DB : List&lt;Training&gt;_
+_-TASK_DB : List&lt;Task&gt;_
 ...</panel_attributes>
     <additional_attributes/>
   </element>
@@ -110,11 +110,11 @@ _-BOOKING_DB : List&lt;Training&gt;_
       <w>210</w>
       <h>90</h>
     </coordinates>
-    <panel_attributes>MockTrainingRepository
+    <panel_attributes>MockTaskRepository
 --
 
 --
-- createDummyTraining() : void
+- createDummyTask() : void
 ...</panel_attributes>
     <additional_attributes/>
   </element>
@@ -126,7 +126,7 @@ _-BOOKING_DB : List&lt;Training&gt;_
       <w>210</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>StandardTrainingRepository
+    <panel_attributes>StandardTaskRepository
 --
 - db: JsonDBTemplate
 ...</panel_attributes>

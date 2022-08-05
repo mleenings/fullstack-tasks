@@ -1,5 +1,0 @@
-db:
-  path: db-test/
-tasks:
-  clientApp:
-    name: Tasks

@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf tasks-common/db-test/
+rm -rf tasks-domain/db-test/

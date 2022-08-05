@@ -11,7 +11,9 @@ node {
 
 jar.dependsOn 'npm_run_build'
 
-// needs webpack cli: npm install webpack webpack-cli --save-dev
+// ###########
+// ! needs webpack cli: npm install webpack webpack-cli --save-dev
+// ###########
 task webpack(type: Exec) {
   commandLine "npm run webpack:build"
 }

@@ -40,7 +40,7 @@ ext {
 
 dependencies {
     // project dependencies
-    implementation project(':tasks-common')
+    implementation project(':tasks-domain')
     // Spring
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -48,13 +48,13 @@ dependencies {
     implementation "org.springframework.security:spring-security-test:${springSecurityTestVersion}"
     implementation 'org.springframework.data:spring-data-commons'
     implementation 'org.springframework:spring-tx'
-    compile 'org.springframework.boot:spring-boot-devtools'
-    compile group: 'org.springframework', name: 'spring-core', version: "${springCoreVersion}"
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation group: 'org.springframework', name: 'spring-core', version: "${springCoreVersion}"
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     // Apache
-    compile "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
+    implementation "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
     testImplementation 'org.apache.httpcomponents:httpclient'
     // Others
     implementation "javax.xml.bind:jaxb-api:${jaxbApiVersion}"
@@ -63,17 +63,17 @@ dependencies {
     implementation "com.google.code.gson:gson:${gsonVersion}"
     // Tests
     testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
-    testCompile "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jupiterVersion}"
-    testCompile "org.junit.vintage:junit-vintage-engine:${junitVintageEngineVersion}"
-    testCompile "org.junit.jupiter:junit-jupiter-params:${jupiterVersion}"
-    testCompile "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
+    testImplementation "org.junit.vintage:junit-vintage-engine:${junitVintageEngineVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${jupiterVersion}"
+    testImplementation "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
     testImplementation "org.mockito:mockito-core:${mockitoVersion}"
-    testCompile "org.junit.platform:junit-platform-runner:${junitPlatformRunnerVersion}"
-    testCompile "org.assertj:assertj-core:${assertjVersion}"
+    testImplementation "org.junit.platform:junit-platform-runner:${junitPlatformRunnerVersion}"
+    testImplementation "org.assertj:assertj-core:${assertjVersion}"
     // Swagger
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: "${swagger2Version}"
-    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: "${swaggerUiVersion}"
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: "${swagger2Version}"
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: "${swaggerUiVersion}"
 }
 
 test {

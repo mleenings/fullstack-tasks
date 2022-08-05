@@ -10,10 +10,10 @@
       <h>150</h>
     </coordinates>
     <panel_attributes>type=Package
-TarentTraining
-	training-ui
-	training-web
-	training-common</panel_attributes>
+Fullstack-Tasks
+	tasks-ui
+	tasks-web
+	tasks-domain</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

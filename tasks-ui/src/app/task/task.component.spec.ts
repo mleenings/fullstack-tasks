@@ -1,11 +1,10 @@
 import {TestBed, async} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {AppComponent} from './app.component';
+import {TaskComponent} from './task.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {TaskComponent} from "./task/task.component";
 
-describe('AppComponent', () => {
+describe('TaskComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -13,20 +12,19 @@ describe('AppComponent', () => {
         HttpClientModule,
       ],
       declarations: [
-        AppComponent,
-        TaskComponent
+        TaskComponent,
       ],
     }).compileComponents();
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(TaskComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(TaskComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('tasks-ui app is running!');

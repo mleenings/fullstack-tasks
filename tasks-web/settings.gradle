@@ -1,1 +1,1 @@
-include 'tasks-common', 'tasks-ui'
+include 'tasks-domain', 'tasks-ui'
