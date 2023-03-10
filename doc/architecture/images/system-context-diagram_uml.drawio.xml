@@ -1,0 +1,19 @@
+<mxfile host="Electron" modified="2023-03-10T09:35:13.126Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.8.16 Chrome/106.0.5249.199 Electron/21.4.0 Safari/537.36" etag="No_qh6POb6guMR2T-olu" compressed="false" version="20.8.16" type="device">
+  <diagram id="tfZsvdu-sOIGey7amnOH" name="Page-1">
+    <mxGraphModel dx="1306" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4hIDfhcL3m03G8mhPFCs-4" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="4hIDfhcL3m03G8mhPFCs-1" target="4hIDfhcL3m03G8mhPFCs-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4hIDfhcL3m03G8mhPFCs-1" value="User" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;html=1;outlineConnect=0;labelPosition=center;align=center;" parent="1" vertex="1">
+          <mxGeometry x="400" y="200" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4hIDfhcL3m03G8mhPFCs-3" value="«Software System»&#xa;Tasks" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="341" y="360" width="145" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,42 @@
+<mxfile host="Electron" modified="2023-03-10T09:33:40.405Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.8.16 Chrome/106.0.5249.199 Electron/21.4.0 Safari/537.36" etag="srwRxTbgWtkMd0UrN6RS" compressed="false" version="20.8.16" type="device">
+  <diagram id="jZDUCDa-boO5IKCTVnhj" name="Page-1">
+    <mxGraphModel dx="1306" dy="854" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u5FsMzhLvwDxM032LKnM-12" value="Uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="u5FsMzhLvwDxM032LKnM-1" target="u5FsMzhLvwDxM032LKnM-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-1" value="User" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;html=1;labelPosition=center;align=center;" parent="1" vertex="1">
+          <mxGeometry x="390" y="90" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-2" value="Tasks" style="shape=folder;fontStyle=1;spacingTop=12;tabWidth=60;tabHeight=20;tabPosition=left;html=1;labelPosition=left;verticalLabelPosition=top;align=right;verticalAlign=bottom;spacing=-17;spacingLeft=0;spacingRight=-21;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="260" y="180" width="290" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-7" value="Makes API calls to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" parent="1" source="u5FsMzhLvwDxM032LKnM-3" target="u5FsMzhLvwDxM032LKnM-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-3" value="«Container»&#xa;Single-Page Application" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="325" y="220" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-8" value="Uses" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="u5FsMzhLvwDxM032LKnM-4" target="u5FsMzhLvwDxM032LKnM-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-4" value="«Container»&#xa;Web Component" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="325" y="320" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-10" value="Reads from and writes to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="u5FsMzhLvwDxM032LKnM-5" target="u5FsMzhLvwDxM032LKnM-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-5" value="«Container»&#xa;Domain Component" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="325" y="420" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u5FsMzhLvwDxM032LKnM-6" value="«Container»&#xa;Database" style="shape=module;align=left;spacingLeft=20;align=center;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="325" y="520" width="160" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
